@@ -52,7 +52,7 @@ fi
 
 if [ "$INPUT_DIRECTORY" != "." ] 
 then
-  mv $INPUT_FILENAME $PWD
+  mv $INPUT_FILENAME ..
 fi
 
 printf "\n✔ Successfully created %s archive.\n" "$INPUT_TYPE"
