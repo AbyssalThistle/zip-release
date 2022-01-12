@@ -5,6 +5,8 @@ set -eu
 
 printf "\n📦 Creating %s archive...\n" "$INPUT_TYPE"
 
+PWD=$(pwd)
+
 if [ "$INPUT_DIRECTORY" != "." ] 
 then
   cd $INPUT_DIRECTORY
@@ -46,6 +48,11 @@ then
   fi
 else
   printf "\n⛔ Invalid archiving tool.\n"; exit 1;
+fi
+
+if [ "$INPUT_DIRECTORY" != "." ] 
+then
+  mv $INPUT_FILENAME $PWD
 fi
 
 printf "\n✔ Successfully created %s archive.\n" "$INPUT_TYPE"
